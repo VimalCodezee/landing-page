@@ -4,6 +4,42 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+  // ─── Live date & time (dashboard) ───
+  const liveDateEl = document.getElementById("dashboard-live-date");
+  const liveTimeEl = document.getElementById("dashboard-live-time");
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  function updateLiveDateTime() {
+    const now = new Date();
+    if (liveDateEl) {
+      const d = now.getDate();
+      const m = monthNames[now.getMonth()];
+      const y = now.getFullYear();
+      liveDateEl.textContent = `${d} ${m} ${y}`;
+    }
+    if (liveTimeEl) {
+      const h = String(now.getHours()).padStart(2, "0");
+      const min = String(now.getMinutes()).padStart(2, "0");
+      const s = String(now.getSeconds()).padStart(2, "0");
+      liveTimeEl.textContent = `${h}:${min}:${s}`;
+    }
+  }
+  updateLiveDateTime();
+  if (liveTimeEl) setInterval(updateLiveDateTime, 1000);
+
   // ─── Mobile Menu ───
   const menuBtn = document.getElementById("mobile-menu-btn");
   const menuOverlay = document.getElementById("mobile-menu-overlay");
@@ -33,18 +69,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   mobileLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
-  // ─── Smooth Scrolling ───
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      const target = document.querySelector(this.getAttribute("href"));
-      if (!target) return;
-      e.preventDefault();
-      const offset = 80; // header height
-      const top =
-        target.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top, behavior: "smooth" });
-    });
-  });
+  // ─── Smooth Scrolling (header & footer nav, in-page anchors) ───
+  const headerOffsetPx = 80;
+  function scrollToSection(e) {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const hash = a.getAttribute("href");
+    if (!hash || hash === "#") return;
+    const target = document.querySelector(hash);
+    if (!target) return;
+    e.preventDefault();
+    const top =
+      target.getBoundingClientRect().top + window.scrollY - headerOffsetPx;
+    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+  }
+  document.addEventListener("click", scrollToSection);
 
   // ─── FAQ Accordion ───
   document.querySelectorAll(".faq-toggle").forEach((btn) => {
@@ -69,10 +108,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          if (el.hasAttribute("data-scroll-visible")) {
+            observer.unobserve(el);
+            return;
           }
+          el.setAttribute("data-scroll-visible", "true");
+          observer.unobserve(el);
+          el.classList.add("visible");
         });
       },
       { threshold: 0.15 }
@@ -81,45 +125,36 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ─── Animate.css Scroll Animations for Sections ───
-  // Find all sections that should be animated
-  const sectionsToAnimate = document.querySelectorAll("section.animate__animated, section[class*='animate__fadeIn']");
-  
+  // Use data-animate so each section is only matched once (no duplicate observations)
+  const sectionNodes = document.querySelectorAll("section[data-animate]");
+  const sectionsToAnimate = Array.from(sectionNodes);
+
   if (sectionsToAnimate.length) {
     const sectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const section = entry.target;
-            const animationType = section.getAttribute("data-animation") || "animate__fadeInUp";
-            
-            // Add animation classes to trigger animation
-            section.classList.add("animate__animated", animationType);
-            
+          if (!entry.isIntersecting) return;
+          const section = entry.target;
+          // Set flag first so any duplicate callback (or same entry twice) cannot re-run
+          if (section.hasAttribute("data-scroll-animated")) {
             sectionObserver.unobserve(section);
+            return;
           }
+          section.setAttribute("data-scroll-animated", "true");
+          sectionObserver.unobserve(section);
+          const anim = (
+            section.getAttribute("data-animate") || "fadeInUp"
+          ).trim();
+          const animationClass = anim.startsWith("animate__")
+            ? anim
+            : "animate__" + anim;
+          section.classList.add("animate__animated", animationClass);
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -80px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
     );
-    
-    sectionsToAnimate.forEach((section) => {
-      // Determine animation type from existing classes
-      let animationType = "animate__fadeInUp";
-      if (section.classList.contains("animate__fadeIn")) {
-        animationType = "animate__fadeIn";
-      } else if (section.classList.contains("animate__fadeInUp")) {
-        animationType = "animate__fadeInUp";
-      }
-      
-      // Store animation type in data attribute
-      section.setAttribute("data-animation", animationType);
-      
-      // Remove animation classes initially so they trigger on scroll
-      section.classList.remove("animate__animated", "animate__fadeIn", "animate__fadeInUp");
-      
-      // Observe section for scroll animation
-      sectionObserver.observe(section);
-    });
+
+    sectionsToAnimate.forEach((section) => sectionObserver.observe(section));
   }
 
   // ─── FAQ Items Slide-in Animation ───
@@ -129,10 +164,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const faqObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("faq-visible");
-            faqObserver.unobserve(entry.target);
+          if (!entry.isIntersecting) return;
+          const item = entry.target;
+          if (item.hasAttribute("data-faq-animated")) {
+            faqObserver.unobserve(item);
+            return;
           }
+          item.setAttribute("data-faq-animated", "true");
+          faqObserver.unobserve(item);
+          item.classList.add("faq-visible");
         });
       },
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
@@ -168,16 +208,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ─── Load SVG Diagram (Responsive) ───
   const svgContainer = document.querySelector(".svg-container");
-  
+
   function loadDiagram() {
     if (!svgContainer) return;
-    
+
     // Check if mobile view (width < 1024px, matching lg breakpoint)
     const isMobile = window.innerWidth < 1024;
-    const svgPath = isMobile 
-      ? "assets/images/res-diagram.svg" 
+    const svgPath = isMobile
+      ? "assets/images/res-diagram.svg"
       : "assets/images/diagram.svg";
-    
+
     fetch(svgPath)
       .then((response) => {
         if (!response.ok) throw new Error("Failed to load SVG");
@@ -209,11 +249,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
   }
-  
+
   // Load diagram on page load
   if (svgContainer) {
     loadDiagram();
-    
+
     // Reload diagram on window resize (debounced)
     let resizeTimeout;
     window.addEventListener("resize", () => {

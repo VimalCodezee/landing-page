@@ -3,6 +3,16 @@
   font-family: Zalando Sans;
 }
 
+/* Scroll targets: leave space for sticky header when navigating via anchor links */
+#home,
+#dashboard,
+#problems,
+#features,
+#faq,
+#contact {
+  scroll-margin-top: 88px;
+}
+
 /* Custom CSS - Tailwind utilities removed (loaded via CDN) */
 
 .demo-btn {
@@ -139,7 +149,7 @@
   flex-wrap: wrap;
   width: 100%;
   max-width: 100%;
-  gap: 1rem;
+  gap: 26px;
   padding: 0.5rem 0;
 }
 
@@ -208,6 +218,7 @@
   min-width: 0;
   background: #fff;
   border-radius: 10px;
+  max-width: 387px;
   padding: 12px 14px;
   align-items: start;
   box-shadow: 0 0 0 1px #e5e5e5;
@@ -224,7 +235,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
 }
 
 .leave-item {
@@ -233,14 +244,14 @@
 
 .leave-item p {
   margin: 6px 0 0;
-  font-size: 11px;
-  color: #222;
+  font-size: 12px;
+  color: #000000;
 }
 
 /* circular progress */
 .progress-circle {
-  width: 46px;
-  height: 46px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -267,13 +278,13 @@
   position: relative;
   z-index: 2;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.1;
   text-align: center;
 }
 
 .progress-circle small {
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 400;
   color: #666;
 }
@@ -295,7 +306,7 @@
 }
 
 .leave-actions a {
-  font-size: 12px;
+  font-size: 14px;
   color: #4fa7ff;
   text-decoration: none;
   line-height: 1.2;
@@ -348,16 +359,11 @@
   .on-leave-today-card,
   .leave-card {
     flex: 1 1 100%;
+    max-width: 100%;
   }
 
   .leave-content {
     gap: 12px;
-  }
-
-  .leave-actions {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 8px;
   }
 
   .avatar-wrapper {
@@ -415,6 +421,7 @@
 
   .leave-card {
     flex: 1 1 auto;
+    max-width: 100%;
   }
 }
 
@@ -478,6 +485,11 @@
   color: #fff;
   display: flex;
   align-items: center;
+  /* Frame 2085663303 */
+
+  background: linear-gradient(180deg, #243f89 0%, #141a2a 100%);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22), 0px 4px 14px rgba(0, 0, 0, 0.28);
+
   justify-content: center;
   font-weight: 600;
   margin-bottom: 28px;
@@ -574,14 +586,16 @@
   border: 1px solid #e5e7eb;
   display: flex;
   flex-direction: column;
-  max-height: none;
+  max-height: 516px;
   overflow: hidden;
 }
 
 /* TOP CONTENT */
 .feature-card .content {
   padding: 1rem;
+  padding-bottom: 36px;
   margin-top: 20px;
+  margin-left: 20px;
 }
 
 .feature-card h2 {
@@ -633,7 +647,15 @@
 
   .feature-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+  }
+
+  .image-wrap-3 {
+    max-height: 100% !important ;
+  }
+
+  .feature-card {
+    height: 100%;
+    max-height: 100%;
   }
 
   .title {
@@ -681,7 +703,6 @@
 
   .image-wrap-3 {
     gap: 1rem;
-    min-height: 180px;
   }
 }
 
@@ -707,14 +728,6 @@
     font-size: 14px;
     margin-bottom: 1.5rem;
     padding: 0;
-  }
-
-  .feature-grid {
-    gap: 1.25rem;
-  }
-
-  .feature-card {
-    border-radius: 0.5rem;
   }
 
   .feature-card .content {
@@ -785,7 +798,7 @@
 
   .image-wrap-3 {
     gap: 1rem;
-    min-height: 150px;
+    min-height: auto;
   }
 }
 
@@ -816,7 +829,7 @@
   }
 
   .image-wrap-3 {
-    min-height: 120px;
+    min-height: auto;
     gap: 0.875rem;
   }
 }
@@ -873,7 +886,6 @@
   padding: 2rem 1.875rem;
   height: 100%;
   border: 1px solid #e3e3e3;
-  border-radius: 0.5rem;
 }
 
 .payroll-card h2 {
@@ -1295,7 +1307,7 @@ button {
 }
 
 .frame-1 {
-  width: 50%;
+  width: 85%;
   height: auto;
   max-width: 100%;
   z-index: 1400;
@@ -1325,8 +1337,8 @@ button {
   gap: 1.25rem;
   justify-content: center;
   width: 100%;
-  height: auto;
-  min-height: 200px;
+  height: 100%;
+  max-height: 300px;
   position: relative;
 }
 
@@ -1517,7 +1529,7 @@ button {
 .ecosystem-section-inner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
   position: relative;
   z-index: 1;
@@ -1526,7 +1538,7 @@ button {
 .ecosystem-section-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.5rem;
   max-width: 100%;
 }
@@ -1534,7 +1546,9 @@ button {
 .ecosystem-section-text {
   display: flex;
   flex-direction: column;
+  text-align: center;
   gap: 1rem;
+  align-items: center;
 }
 
 .ecosystem-section-heading {
@@ -1633,7 +1647,7 @@ button {
 
   .ecosystem-section-inner {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 2rem;
     min-height: 250px;
@@ -1642,11 +1656,13 @@ button {
   .ecosystem-section-content {
     flex: 0 1 auto;
     max-width: 383px;
+    align-items: flex-start;
     gap: 38px;
   }
 
   .ecosystem-section-text {
     gap: 24px;
+    text-align: left;
   }
 
   .ecosystem-section-heading {
@@ -1713,7 +1729,7 @@ button {
 .masonry-scroll-container .masonry-item .reflection-card {
   background: white !important;
   border: 1px solid rgb(226, 232, 240) !important;
-  border-radius: 2rem !important;
+  border-radius: 15px;
   box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05) !important;
   position: relative;
   z-index: 1;
@@ -1727,11 +1743,6 @@ button {
   flex-direction: column;
   animation: scrollDown 40s linear infinite;
   will-change: transform;
-}
-
-/* Pause Animation on Hover */
-.masonry-scroll-container:hover .masonry-scroll-wrapper {
-  animation-play-state: paused;
 }
 
 /* Spacing Between Duplicate Grids */
@@ -1794,7 +1805,6 @@ button {
 .masonry-item .reflection-card {
   background: white !important;
   border: 1px solid rgb(226, 232, 240) !important;
-  border-radius: 2rem !important;
   box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05) !important;
   display: flex;
   flex-direction: column;
@@ -1824,7 +1834,6 @@ button {
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
-  border-radius: 2rem;
 }
 
 .reflection-mirror > * {
@@ -1833,7 +1842,6 @@ button {
   opacity: 0.25;
   filter: blur(0.5px);
   background: white;
-  border-radius: 2rem;
   border: 1px solid rgba(226, 232, 240, 0.4);
   box-shadow: 0 -4px 20px -4px rgba(0, 0, 0, 0.05);
   mask-image: linear-gradient(
@@ -1868,20 +1876,6 @@ button {
   transform: none !important;
   direction: ltr;
   unicode-bidi: normal;
-}
-
-.masonry-item:hover {
-  transform: translateY(-6px) scale(1.01);
-  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.15));
-}
-
-.masonry-item:hover .reflection-card {
-  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.15);
-  border-color: rgba(148, 163, 184, 0.4);
-}
-
-.masonry-item:hover .reflection-mirror > * {
-  opacity: 0.35;
 }
 
 /* Ensure card content is properly contained and not inverted */
@@ -2020,7 +2014,11 @@ button {
 
 /* FOOTER WRAPPER */
 .cz-footer {
-  background: linear-gradient(90deg, #0c1530 0%, #1c2d5b 100%);
+  background: radial-gradient(
+    53.48% 141.66% at 50% 50%,
+    #23315d 0%,
+    #141a2a 100%
+  );
   color: #fff;
   width: 100%;
   font-family: Arial, sans-serif;
@@ -2325,7 +2323,7 @@ button {
 ========================= */
 @media (max-width: 1024px) {
   .cz-footer-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 2rem 1.5rem 1.5rem;
   }
@@ -2442,11 +2440,9 @@ button {
 }
 
 .right-blob {
-  /* Ellipse 59 */
-
   position: absolute;
-  width: 376px;
-  height: 376px;
+  width: 276px;
+  height: 276px;
   right: 0;
   top: 0;
 
@@ -2459,8 +2455,8 @@ button {
   /* Ellipse 60 */
 
   position: absolute;
-  width: 376px;
-  height: 376px;
+  width: 276px;
+  height: 276px;
   left: -100px;
   top: 0;
 
