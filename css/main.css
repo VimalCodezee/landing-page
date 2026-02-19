@@ -3,6 +3,79 @@
   font-family: Zalando Sans;
 }
 
+/* ─── Smooth scrolling + thin scrollbar (theme colors) ─── */
+/* Theme: accent #3ba4e8, dark blue #1885d0 / #1f3f8f, bg #f8fbfb, border #dbe1e5 */
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #3ba4e8 #e2eaf0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #e2eaf0;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #3ba4e8;
+  border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #1885d0;
+}
+
+html::-webkit-scrollbar-thumb:active {
+  background: #1f3f8f;
+}
+
+/* Optional: thin scrollbar on scrollable containers (e.g. masonry, overflow areas) */
+.overflow-auto::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar,
+.overflow-x-auto::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.overflow-auto::-webkit-scrollbar-track,
+.overflow-y-auto::-webkit-scrollbar-track,
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: #e2eaf0;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb,
+.overflow-y-auto::-webkit-scrollbar-thumb,
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #3ba4e8;
+  border-radius: 3px;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb:hover,
+.overflow-y-auto::-webkit-scrollbar-thumb:hover,
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #1885d0;
+}
+
+/* Firefox: thin theme scrollbar on scrollable containers */
+.overflow-auto,
+.overflow-y-auto,
+.overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #3ba4e8 #e2eaf0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Scroll targets: leave space for sticky header when navigating via anchor links */
 #home,
 #dashboard,
