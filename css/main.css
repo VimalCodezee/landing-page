@@ -150,6 +150,7 @@ html::-webkit-scrollbar-thumb:active {
 }
 
 .dashboard-left-content {
+  border-right: none;
   background-image: url("../assets/images/afternoon_banner.webp");
   background-size: cover;
   background-position: center;
@@ -171,6 +172,7 @@ html::-webkit-scrollbar-thumb:active {
 
 .dashboard-right-content {
   border: 1px solid #e0e0e0;
+  border-left: none;
   flex: 0 0 auto;
   border-radius: 0 12px 12px 0;
   max-width: 200px;
@@ -1563,6 +1565,7 @@ button {
 
   .svg-container {
     width: 100%;
+    background-image: none;
   }
 }
 
@@ -1575,6 +1578,10 @@ button {
 
   .svg-container {
     width: 100%;
+  }
+
+  .svg-container svg {
+    width: 70%;
   }
 }
 
