@@ -124,39 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
     animElements.forEach((el) => observer.observe(el));
   }
 
-  // ─── Animate.css Scroll Animations for Sections ───
-  // Use data-animate so each section is only matched once (no duplicate observations)
-  const sectionNodes = document.querySelectorAll("section[data-animate]");
-  const sectionsToAnimate = Array.from(sectionNodes);
-
-  if (sectionsToAnimate.length) {
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const section = entry.target;
-          // Set flag first so any duplicate callback (or same entry twice) cannot re-run
-          if (section.hasAttribute("data-scroll-animated")) {
-            sectionObserver.unobserve(section);
-            return;
-          }
-          section.setAttribute("data-scroll-animated", "true");
-          sectionObserver.unobserve(section);
-          const anim = (
-            section.getAttribute("data-animate") || "fadeInUp"
-          ).trim();
-          const animationClass = anim.startsWith("animate__")
-            ? anim
-            : "animate__" + anim;
-          section.classList.add("animate__animated", animationClass);
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
-    );
-
-    sectionsToAnimate.forEach((section) => sectionObserver.observe(section));
-  }
-
   // ─── FAQ Items Slide-in Animation ───
   const faqItems = document.querySelectorAll(".faq-item");
 

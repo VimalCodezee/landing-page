@@ -17,7 +17,7 @@
 
     <link href="css/main.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
@@ -32,9 +32,9 @@
       <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[56px]" id="74_564_110_0_1220_66">
         <div class="flex items-center justify-between" id="74:571">
           <!-- Logo -->
-          <div class="flex items-center" id="74:570">
+          <div class="flex items-center" id="logo-wrap">
             <img src="assets/images/img_logo.svg" alt="HRMS Logo"
-              class="w-[80%] h-[100%] sm:w-[87px] sm:h-[30px] lg:w-[116px] lg:h-[40px]" id="74:570" />
+              class="w-[80%] h-[100%] sm:w-[87px] sm:h-[30px] lg:w-[116px] lg:h-[40px]" id="logo-img" />
           </div>
 
           <!-- Desktop Navigation (hidden on mobile) -->
@@ -174,7 +174,7 @@
 
     <!-- Hero Section -->
     <main>
-      <section id="home" class="relative w-full bg-[#f8fbfb] relative overflow-hidden" data-animate="fadeIn" style="
+      <section id="home" class="relative w-full bg-[#f8fbfb] relative overflow-hidden" data-aos="fade" style="
           background-image: url('assets/images/img_lightbg_1.png');
           background-size: cover;
           background-position: center;
@@ -191,9 +191,9 @@
 
           <div
             class="flex flex-col items-center text-center max-w-[620px] sm:max-w-[744px] lg:max-w-[888px] mx-auto space-y-[16px] sm:space-y-[24px] md:space-y-[30px] lg:space-y-[40px]"
-            id="74:597">
+            id="hero-content">
             <!-- Hero Title -->
-            <div class="space-y-[10px] sm:space-y-[14px] md:space-y-[18px] lg:space-y-[24px] px-2" id="74:597">
+            <div class="space-y-[10px] sm:space-y-[14px] md:space-y-[18px] lg:space-y-[24px] px-2" id="hero-title-wrap">
               <h1
                 class="text-[24px] sm:text-[32px] md:text-[39px] lg:text-[52px] font-medium leading-[30px] sm:leading-[38px] md:leading-[47px] lg:leading-[63px] text-center text-black break-words"
                 id="74:598">
@@ -243,9 +243,9 @@
         </div>
       </section>
       <!-- Dashboard Preview Section -->
-      <section class="dashboard-preview-section" data-animate="fadeInUp">
-        <div class="dashboard-preview-container" id="74:644">
-          <div class="space-y-[10px] sm:space-y-[15px] lg:space-y-[20px]" id="74:644">
+      <section class="dashboard-preview-section" data-aos="fade-up">
+        <div class="dashboard-preview-container" id="dashboard-container">
+          <div class="space-y-[10px] sm:space-y-[15px] lg:space-y-[20px]" id="dashboard-inner">
             <!-- Dashboard Header -->
             <div class="dashboard-header-container" id="74:646">
               <div class="dashboard-left-content">
@@ -457,11 +457,10 @@
 
 
       <!-- Solutions Section -->
-      <section id="features" class="platform-section" data-animate="fadeInUp">
+      <section id="features" class="platform-section" data-aos="fade-up">
 
-        <!-- Problems Section -->
-
-        <div class="hr-section" data-animate="fadeInUp">
+        <!-- Problems Section (no data-animate – parent #features section handles scroll animation) -->
+        <div class="hr-section">
           <div class="container">
             <h2 class="section-title">
               Tired of Managing HR & Payroll Manually?
@@ -702,7 +701,7 @@
         </div>
       </section>
 
-      <section class="diagram-section" data-animate="fadeInUp">
+      <section class="diagram-section" data-aos="fade-up">
         <div class="diagram-header">
           <p class="title">Explore Our Complete HRMS Ecosystem</p>
           <p class="subtitle">
@@ -717,7 +716,7 @@
           </div>
       </section>
 
-      <section class="ecosystem-section-container" data-animate="fadeInUp">
+      <section class="ecosystem-section-container" data-aos="fade-up">
         <div class="ecosystem-section-inner">
           <div class="ecosystem-section-content">
             <div class="ecosystem-section-text">
@@ -740,7 +739,7 @@
         </div>
       </section>
 
-      <section class="bg-[#f8f9fa] text-slate-900" data-animate="fadeInUp">
+      <section class="bg-[#f8f9fa] text-slate-900" data-aos="fade-up">
         <div class="min-h-screen">
           <!-- Main Content Wrapper -->
           <div class="max-w-[1400px] mx-auto px-6 pt-32 pb-20">
@@ -1132,7 +1131,7 @@
       </section>
 
       <!-- FAQ Section -->
-      <section id="faq" class="w-full bg-[#f8fbfb] py-[60px] sm:py-[90px] lg:py-[80px]" data-animate="fadeInUp">
+      <section id="faq" class="w-full bg-[#f8fbfb] py-[60px] sm:py-[90px] lg:py-[80px]" data-aos="fade-up">
         <div class="w-full max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-[40px] sm:mb-[60px] lg:mb-[80px]">
             <h2
@@ -1325,7 +1324,7 @@
       </section>
 
       <!-- HelpSection -->
-      <section id="contact" class="py-20 px-6 lg:px-24" data-animate="fadeInUp">
+      <section id="contact" class="py-20 px-6 lg:px-24" data-aos="fade-up">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <!-- LEFT SIDE -->
           <div>
@@ -1380,7 +1379,7 @@
 
               <!-- Button -->
               <div class="text-center">
-                <button class="demo-btn" id="74:583">Send Message</button>
+                <button type="button" class="demo-btn" id="contact-submit">Send Message</button>
               </div>
             </form>
           </div>
@@ -1465,6 +1464,10 @@
         </div>
       </footer>
 
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init({ once: true, offset: 60, duration: 600 });
+      </script>
       <script src="script.js"></script>
     </main>
   </body>
