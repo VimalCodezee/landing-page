@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add-ons | Codezee</title>
+    <meta
+      name="description"
+      content="Automate HR operations, payroll processing, and statutory compliance with our powerful HRMS platform. Streamline employee management, attendance tracking, and leave approvals."
+    />
+    <meta
+      name="keywords"
+      content="HRMS software, payroll automation, employee management, attendance tracking, leave management, compliance, HR platform"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="All-in-One HRMS & Payroll Software for Growing Businesses"
+    />
+    <meta
+      property="og:description"
+      content="Automate HR operations, payroll processing, and statutory compliance with our powerful HRMS platform designed for growing businesses."
+    />
+
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preload" href="css/main.css" as="style" />
+    <link rel="preload" href="script.js" as="script" />
+    <link
+      rel="preload"
+      href="assets/icons/apple-touch-icon-57x57.png"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="assets/icons/apple-touch-icon-114x114.png"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="assets/icons/apple-touch-icon-72x72.png"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="assets/icons/apple-touch-icon-144x144.png"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="assets/icons/apple-touch-icon-60x60.png"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="assets/icons/apple-touch-icon-120x120.png"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="assets/icons/apple-touch-icon-76x76.png"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="assets/icons/apple-touch-icon-152x152.png"
+      as="image"
+    />
+    <link rel="preload" href="assets/icons/favicon-196x196.png" as="image" />
+    <link rel="preload" href="assets/icons/favicon-96x96.png" as="image" />
+    <link rel="preload" href="assets/icons/favicon-32x32.png" as="image" />
+    <link rel="preload" href="assets/icons/favicon-16x16.png" as="image" />
+    <link rel="preload" href="assets/icons/favicon-128.png" as="image" />
+    <link rel="preload" href="assets/icons/mstile-144x144.png" as="image" />
+    <link rel="preload" href="assets/icons/mstile-70x70.png" as="image" />
+    <link rel="preload" href="assets/icons/mstile-150x150.png" as="image" />
+    <link rel="preload" href="assets/icons/mstile-310x150.png" as="image" />
+    <link rel="preload" href="assets/icons/mstile-310x310.png" as="image" />
+
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="57x57"
+      href="assets/icons/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="assets/icons/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="assets/icons/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="assets/icons/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="60x60"
+      href="assets/icons/apple-touch-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="120x120"
+      href="assets/icons/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="76x76"
+      href="assets/icons/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="152x152"
+      href="assets/icons/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/icons/favicon-196x196.png"
+      sizes="196x196"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/icons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/icons/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/icons/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/icons/favicon-128.png"
+      sizes="128x128"
+    />
+    <meta name="application-name" content="&nbsp;" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta
+      name="msapplication-TileImage"
+      content="assets/icons/mstile-144x144.png"
+    />
+    <meta
+      name="msapplication-square70x70logo"
+      content="assets/icons/mstile-70x70.png"
+    />
+    <meta
+      name="msapplication-square150x150logo"
+      content="assets/icons/mstile-150x150.png"
+    />
+    <meta
+      name="msapplication-wide310x150logo"
+      content="assets/icons/mstile-310x150.png"
+    />
+    <meta
+      name="msapplication-square310x310logo"
+      content="assets/icons/mstile-310x310.png"
+    />
+
+    <style>
+      /* ── Addon card ── */
+      .addon-card {
+        background: #fff;
+        border: 1.5px solid #e5e9f0;
+        border-radius: 16px;
+        padding: 20px;
+        cursor: pointer;
+        transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+        position: relative;
+        user-select: none;
+        max-height: 206px;
+      }
+      @media (max-width: 1024px) {
+        .addon-card {
+          padding: 10px;
+        }
+      }
+      .addon-card:hover {
+        box-shadow: 0 4px 16px rgba(30, 58, 110, 0.08);
+        transform: translateY(-1px);
+      }
+
+      .addon-card.selected {
+        border-color: #1e3a6e;
+        box-shadow: 0 0 0 2px #1e3a6e20, 0 4px 20px rgba(30, 58, 110, 0.12);
+      }
+      .addon-card.selected .card-checkbox {
+        background: #1b95e3;
+        border-color: #1b95e3;
+      }
+      .addon-card.selected .card-checkbox svg {
+        display: block;
+      }
+
+      /* ── Checkbox ── */
+      .card-checkbox {
+        width: 22px;
+        height: 22px;
+        border: 1.5px solid #d0d7e3;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.15s, border-color 0.15s;
+        flex-shrink: 0;
+      }
+      .card-checkbox svg {
+        display: none;
+      }
+
+      /* ── Qty stepper ── */
+      .qty-btn {
+        width: 28px;
+        height: 28px;
+        border: 1.5px solid #d0d7e3;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        cursor: pointer;
+        transition: background 0.15s, border-color 0.15s;
+        font-size: 16px;
+        font-weight: 600;
+        color: #374151;
+      }
+      .qty-btn:hover {
+        background: #f0f4ff;
+        border-color: #1e3a6e;
+        color: #1e3a6e;
+      }
+      .qty-val {
+        min-width: 32px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 15px;
+        color: #111827;
+      }
+
+      /* ── Order summary ── */
+      .summary-card {
+        background: #fff;
+
+        border-radius: 20px;
+        padding: 32px;
+        position: sticky;
+        top: 86px;
+        box-shadow: 0px 40px 40px -15px #54647a0a;
+      }
+
+      /* ── Checkout btn ── */
+      .checkout-btn {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(180deg, #243f89 0%, #141a2a 100%);
+        color: #fff;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: opacity 0.2s, transform 0.15s;
+        cursor: pointer;
+        border: none;
+        position: relative;
+      }
+      .checkout-btn:hover {
+        opacity: 0.93;
+        transform: translateY(-1px);
+      }
+      .checkout-btn .arrow-circle {
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        background: #ffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #191c1e;
+        padding: 4px 4px;
+        z-index: 1;
+        right: 12px;
+      }
+      .checkout-btn .arrow-circle::before {
+        content: "";
+        position: absolute;
+        padding: 4px;
+        width: 38px;
+        height: 38px;
+        background-color: #ffffff66;
+        border-radius: 50%;
+        z-index: -1;
+      }
+
+      /* ── Divider ── */
+      .summary-divider {
+        height: 1px;
+        background: #e5e9f0;
+        margin: 16px 0;
+      }
+
+      /* ── Plan badge ── */
+      .plan-badge {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .plan-badge .badge-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #dbffe6;
+        border: 1px solid #b3e8c2;
+        color: #059669;
+
+        border-radius: 50px;
+      }
+      .plan-badge span {
+        font-size: 14px;
+        font-weight: 400;
+        color: #45464d;
+        line-height: 20px;
+      }
+      /* ── Line item qty btns in summary ── */
+      .sum-qty-btn {
+        width: 36px;
+        height: 32px;
+
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        cursor: pointer;
+        transition: background 0.15s, border-color 0.15s;
+        font-size: 14px;
+        font-weight: 600;
+        color: #374151;
+      }
+      .sum-qty-btn:hover {
+        background: #e8eeff;
+        border-color: #1e3a6e;
+        color: #1e3a6e;
+      }
+
+      /* ── Animate total ── */
+      .total-amount {
+        transition: color 0.2s;
+      }
+      .total-flash {
+        color: #1e3a6e !important;
+      }
+      @media (max-width: 640px) {
+        .summary-card {
+          padding: 15px;
+        }
+        .sum-qty-btn {
+          padding: 0px 7px;
+          width: fit-content;
+          height: 23px;
+        }
+        .plan-badge span {
+          font-size: 12px;
+          line-height: 16px;
+        }
+        .checkout-btn {
+          padding: 10px;
+          justify-content: start;
+          font-weight: 500;
+          font-size: 13px;
+        }
+        .checkout-btn .arrow-circle {
+          width: 20px;
+          height: 20px;
+          right: 10px;
+        }
+        .checkout-btn .arrow-circle::before {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ══ HEADER (from  ) ══ -->
+    <header
+      style="z-index: 999"
+      class="w-full h-[66px] bg-white/95 backdrop-blur-md shadow-[0px_1px_1px_#dfdfdf] flex items-center justify-center sticky top-0 z-50"
+      id="74:569"
+    >
+      <div
+        class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[56px] h-full"
+        id="74_564_110_0_1220_66"
+      >
+        <div class="flex items-center justify-between h-full" id="74:571">
+          <!-- Logo -->
+          <div class="flex items-center" id="logo-wrap">
+            <img
+              src="assets/images/img_logo.svg"
+              alt="HRMS Logo"
+              class="w-[80%] h-[100%] sm:w-[87px] sm:h-[30px] lg:w-[116px] lg:h-[40px]"
+              id="logo-img"
+            />
+          </div>
+
+          <!-- Desktop Navigation (hidden on mobile) -->
+          <nav
+            class="hidden lg:flex items-center gap-[24px] h-full"
+            id="header-desktop-nav"
+            aria-label="Main navigation"
+          >
+            <div class="h-full" id="74:572">
+              <a
+                href="index.html#home"
+                class="text-[14px] font-[400] leading-[20px] text-[#7C7C7C] h-full flex items-center px-[10px] hover:text-black transition-colors nav-link"
+                id="74:573"
+                >Home</a
+              >
+            </div>
+
+            <div class="h-full" id="74:574">
+              <a
+                href="index.html#features"
+                class="text-[14px] font-[400] leading-[20px] text-[#7C7C7C] h-full flex items-center px-[10px] hover:text-black transition-colors nav-link"
+                id="74:575"
+                >Features</a
+              >
+            </div>
+
+            <div class="h-full" id="74:576">
+              <a
+                href="pricing-page.html"
+                class="text-[14px] font-[400] leading-[20px] active text-[#7C7C7C] h-full flex items-center px-[10px] hover:text-black transition-colors nav-link"
+                id="74:577"
+                >Pricing</a
+              >
+            </div>
+
+            <div class="h-full" id="74:578">
+              <a
+                href="index.html#contact"
+                class="text-[14px] font-[400] leading-[20px] text-[#7C7C7C] h-full flex items-center px-[10px] hover:text-black transition-colors nav-link"
+                id="74:579"
+                >Contact</a
+              >
+            </div>
+          </nav>
+          <!-- CTA -->
+          <div class="hidden lg:flex items-center gap-[16px]">
+            <a href="#" class="login-btn flex items-center justify-center"
+              >Login</a
+            >
+
+            <button class="demo-btn free-demo-btn" id="header-demo-btn">
+              Book Free Demo
+            </button>
+          </div>
+          <!-- Mobile Menu Btn -->
+          <button
+            class="lg:hidden p-2 -mr-2 text-[#333] hover:text-black"
+            aria-label="Open menu"
+            aria-expanded="false"
+            id="mobile-menu-btn"
+          >
+            <svg class="w-6 h-6 menu-icon-open" aria-hidden="true">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+                fill="none"
+                stroke="currentColor"
+              />
+            </svg>
+            <svg
+              class="w-6 h-6 menu-icon-close hidden"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile overlay -->
+      <div
+        class="mobile-menu-overlay lg:hidden"
+        id="mobile-menu-overlay"
+        aria-hidden="true"
+      >
+        <div class="mobile-menu-panel" role="dialog">
+          <div class="flex flex-col h-full p-6 pt-14 relative">
+            <button
+              type="button"
+              class="absolute top-4 right-4 p-2 text-[#333]"
+              id="mobile-menu-close"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <nav class="flex flex-col gap-1 mt-4">
+              <a
+                href="  #home"
+                class="py-3 px-2 text-base text-[#7b7b7b] hover:text-black transition-colors mobile-nav-link"
+                >Home</a
+              >
+              <a
+                href="  #features"
+                class="py-3 px-2 text-base text-[#7b7b7b] hover:text-black transition-colors mobile-nav-link"
+                >Features</a
+              >
+              <a
+                href="pricing-page.html"
+                class="py-3 px-2 text-base font-semibold text-[#1e3a6e] mobile-nav-link"
+                >Pricing</a
+              >
+              <a
+                href="  #contact"
+                class="py-3 px-2 text-base text-[#7b7b7b] hover:text-black transition-colors mobile-nav-link"
+                >Contact</a
+              >
+            </nav>
+            <div class="flex flex-col gap-3 mt-6">
+              <a
+                href="#"
+                class="login-btn w-full flex items-center justify-center"
+                >Login</a
+              >
+              <button class="demo-btn free-demo-btn w-full justify-center">
+                Book Free Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ══ MAIN CONTENT ══ -->
+    <main class="background-image-set">
+      <div
+        class="lg:max-w-[1200px] w-full mx-auto px-[12px] sm:px-6 lg:px-[20px] xl:px-[10px] py-[30px] lg:py-10 lg:py-14"
+      >
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 text-sm text-gray-400 mb-4 xl:mb-8">
+          <a
+            href="pricing-page.html"
+            class="hover:text-gray-600 transition-colors"
+            >Pricing</a
+          >
+          <svg
+            class="w-3.5 h-3.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+          <span class="text-gray-600 font-medium">Customize your plan</span>
+        </div>
+
+        <div
+          class="grid lg:grid-cols-[repeat(2,1fr)] xl:grid-cols-[repeat(2,597px)] xl:gap-[46px] gap-[20px]"
+        >
+          <!-- ── LEFT: Add-ons ── -->
+          <div class="w-full xl:max-w-[597px]">
+            <div class="mb-[24px] lg:mb-[48px] mt-0 lg:mt-[11px]">
+              <span
+                class="text-[14px] lg:text-[16px] font-[500] px-[8px] py-[4px] rounded-full bg-[#F7F7F7] text-[#2E2E2E] border border-[#E0E0E0] leading-normal lg:leading-[24px] font-inter"
+                >Customize your plan</span
+              >
+              <h1
+                class="text-[30px] md:text-[38px] xl:text-[42px] font-[500] text-[#191C1E] my-[10px] xl:my-[16px] leading-normal"
+              >
+                Smart Add-ons
+              </h1>
+              <p
+                class="text-[#45464D] text-[14px] md:text-[16px] leading-[19px] pe-[30px] xl:max-w-[535px] font-inter"
+              >
+                Enhance your experience with these targeted upgrades, designed
+                to handle specialized operational needs.
+              </p>
+            </div>
+
+            <!-- Add-on Cards Grid -->
+            <div
+              class="grid sm:grid-cols-2 gap-2 xl:gap-4"
+              id="addon-grid"
+            ></div>
+            <!-- /addon-grid -->
+          </div>
+
+          <!-- ── RIGHT: Order Summary ── -->
+          <div class="summary-card">
+            <h2
+              class="text-[16px] sm:text-[20px] leading-[24px] sm:leading-[28px] text-[#191C1E] font-[500] mb-[12px] sm:mb-[24px]"
+            >
+              Order Summary
+            </h2>
+
+            <!-- Plan row -->
+            <div
+              class="border-b border-[#C6C6CD80] pb-[12px] sm:pb-[24px] mb-[12px] sm:mb-[24px]"
+            >
+              <div class="flex justify-between sm:mb-[16px] mb-[12px]">
+                <div>
+                  <p
+                    class="text-[12px] text-[#45464D] uppercase font-[600] leading-[16px] mb-[4px]"
+                  >
+                    Plan
+                  </p>
+                  <p
+                    id="plan-name"
+                    class="font-[600] capitalize text-[#191C1E] text-[14px] sm:text-[18px] leading-[28px]"
+                  >
+                    Professional Plan
+                  </p>
+                </div>
+                <div class="flex items-center gap-[4px]">
+                  <p
+                    id="plan-price"
+                    class="font-[600] leading-[22px] text-[#191C1E] text-[15px] sm:text-[18px]"
+                  >
+                    ₹3,174
+                  </p>
+                  <p
+                    class="text-[12px] leading-[16px] font-[400] text-[#45464D]"
+                  >
+                    / month
+                  </p>
+                </div>
+              </div>
+              <div class="plan-badge">
+                <span
+                  class="badge-icon sm:w-[24px] w-[20px] h-[20px] sm:h-[24px]"
+                >
+                  <svg
+                    class="sm:w-[14px] w-[10px] sm:h-[14px] h-[10px]"
+                    fill="currentColor"
+                    viewBox="-249.6 -249.6 2419.20 2419.20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    stroke="#000000"
+                    stroke-width="53.760000000000005"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        d="M1827.701 303.065 698.835 1431.801 92.299 825.266 0 917.564 698.835 1616.4 1919.869 395.234z"
+                        fill-rule="evenodd"
+                      ></path>
+                    </g>
+                  </svg>
+                </span>
+                <span id="plan-employees">Up to 46 employees</span>
+              </div>
+            </div>
+
+            <!-- Add-ons section -->
+            <div class="border-b border-[#C6C6CD80]">
+              <p
+                class="text-[12px] leading-[16px] text-[#45464D] uppercase font-[600] sm:mb-[16px] mb-[12px]"
+              >
+                Add-ons
+              </p>
+
+              <!-- Dynamic add-on line items -->
+              <div id="summary-addons" class="grid gap-[8px]">
+                <!-- Populated by JS -->
+              </div>
+
+              <div
+                id="no-addons"
+                class="hidden text-sm text-gray-400 italic py-2"
+              >
+                No add-ons selected.
+              </div>
+            </div>
+
+            <!-- Total -->
+            <div
+              class="flex items-center justify-between my-[16px] sm:my-[32px]"
+            >
+              <div>
+                <p
+                  class="text-[15px] sm:text-[18px] font-[500] text-[#191C1E] leading-[22px]"
+                >
+                  Total Due
+                </p>
+              </div>
+              <div>
+                <p
+                  id="total-price"
+                  class="text-[20px] sm:text-[30px] sm:mb-[4px] font-[600] text-[#191C1E] leading-normal sm:leading-[36px] total-amount text-right"
+                >
+                  ₹9,674
+                </p>
+                <p class="text-[12px] text-[#45464D] leading-[16px] font-[400]">
+                  Billed monthly + add-ons
+                </p>
+              </div>
+            </div>
+
+            <!-- Checkout -->
+            <button class="checkout-btn" id="checkout-btn">
+              <span>Continue to Checkout</span>
+              <span class="arrow-circle">
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 1920 1920"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="m1304.824 345.002-81.25 81.249 476.466 476.582H0v114.922h1700.04l-476.466 476.465 81.25 81.25L1920 960.293z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </g>
+                </svg>
+              </span>
+            </button>
+
+            <!-- SSL note -->
+            <p
+              class="text-center text-[12px] leading-[16px] text-[#45464D] mt-[16px] font-[400]"
+            >
+              Secure 256-bit SSL Encrypted Connection
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ══ FOOTER (from  ) ══ -->
+    <footer class="cz-footer">
+      <div class="cz-footer-container">
+        <!-- Left Logo Section -->
+        <div
+          class="flex flex-col gap-3 sm:gap-4 lg:gap-[18px] items-start sm:items-center lg:items-start"
+        >
+          <img
+            src="assets/images/new_logo.svg"
+            alt="CODEZEE Logo"
+            class="w-[100px] h-auto sm:w-[120px] lg:w-[140px] object-contain"
+          />
+
+          <p
+            class="font-normal text-[#ffffff] text-xs sm:text-sm lg:text-base leading-relaxed max-w-xs"
+          >
+            One Platform for Smarter HR & Payroll Management.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="cz-footer-col">
+          <h4>Quick Links</h4>
+
+          <a href="index.html#home">Home</a>
+          <a href="index.html#features">Features</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="pricing-page.html">Pricing</a>
+        </div>
+
+        <!-- Social -->
+        <div class="cz-footer-col">
+          <h4>Social Media</h4>
+
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">X</a>
+          <a href="#">LinkedIn</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="cz-footer-col">
+          <h4>Contact</h4>
+
+          <a href="#">sales@codezeesolutions.com</a>
+          <a href="#">+91 98250 51196</a>
+        </div>
+
+        <!-- Rating -->
+        <div
+          class="cz-footer-rating flex items-end justify-center gap-3 sm:gap-4 lg:gap-6"
+        >
+          <img
+            alt=""
+            class="w-[18px] h-[34px] sm:w-[22px] sm:h-[42px] lg:w-[25px] lg:h-[46px]"
+            src="https://c.animaapp.com/mlrueasmv2Fxi3/img/svg819696372-2388.svg"
+          />
+
+          <div class="flex flex-col items-center gap-2">
+            <img
+              alt=""
+              class="w-[55px] h-[13px] sm:w-[70px] sm:h-[16px] lg:w-[76px] lg:h-[17px]"
+              src="https://c.animaapp.com/mlrueasmv2Fxi3/img/svg-429739349-3417.svg"
+            />
+
+            <p
+              class="font-normal text-[#ffffff] text-xs sm:text-sm lg:text-base text-center leading-tight"
+            >
+              Rated
+              <span class="font-bold"> 4.9 </span>
+              by
+              <span class="font-semibold"> 70+<br />HR Professionals </span>
+            </p>
+          </div>
+
+          <img
+            alt=""
+            class="w-[18px] h-[34px] sm:w-[22px] sm:h-[42px] lg:w-[25px] lg:h-[46px]"
+            src="https://c.animaapp.com/mlrueasmv2Fxi3/img/svg1868473919-2379.svg"
+          />
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="cz-footer-bottom">
+        <span>Codezee All rights reserved 2025-26</span>
+
+        <div class="cz-bottom-links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var menuBtn = document.getElementById("mobile-menu-btn");
+        var overlay = document.getElementById("mobile-menu-overlay");
+        var panel = document.getElementById("mobile-menu-panel");
+        var closeBtn = document.getElementById("mobile-menu-close");
+        var mobileLinks = document.querySelectorAll(".mobile-nav-link");
+
+        function openMenu() {
+          if (!overlay) return;
+          overlay.classList.add("open");
+          overlay.setAttribute("aria-hidden", "false");
+          if (menuBtn) {
+            menuBtn.setAttribute("aria-expanded", "true");
+            menuBtn.setAttribute("aria-label", "Close menu");
+            var openIcon = menuBtn.querySelector(".menu-icon-open");
+            var closeIcon = menuBtn.querySelector(".menu-icon-close");
+            if (openIcon) openIcon.classList.add("hidden");
+            if (closeIcon) closeIcon.classList.remove("hidden");
+          }
+          document.body.style.overflow = "hidden";
+          document.addEventListener("keydown", onKeyDown);
+        }
+
+        function closeMenu() {
+          if (!overlay) return;
+          overlay.classList.remove("open");
+          overlay.setAttribute("aria-hidden", "true");
+          if (menuBtn) {
+            menuBtn.setAttribute("aria-expanded", "false");
+            menuBtn.setAttribute("aria-label", "Open menu");
+            var openIcon = menuBtn.querySelector(".menu-icon-open");
+            var closeIcon = menuBtn.querySelector(".menu-icon-close");
+            if (openIcon) openIcon.classList.remove("hidden");
+            if (closeIcon) closeIcon.classList.add("hidden");
+          }
+          document.body.style.overflow = "";
+          document.removeEventListener("keydown", onKeyDown);
+        }
+
+        function onKeyDown(e) {
+          if (e.key === "Escape") closeMenu();
+        }
+
+        if (menuBtn)
+          menuBtn.addEventListener("click", function () {
+            overlay.classList.contains("open") ? closeMenu() : openMenu();
+          });
+        if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+        overlay.addEventListener("click", function (e) {
+          if (e.target === overlay) closeMenu();
+        });
+        mobileLinks.forEach(function (link) {
+          link.addEventListener("click", closeMenu);
+        });
+
+        window.addEventListener("resize", function () {
+          if (
+            window.innerWidth >= 1024 &&
+            overlay &&
+            overlay.classList.contains("open")
+          )
+            closeMenu();
+        });
+      })();
+    </script>
+
+    <!-- Calendly Popup Modal -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <div
+      id="demoModal"
+      class="fixed inset-0 bg-black/70 dialog-container h-full z-[999999] hidden items-center justify-center"
+    >
+      <button
+        id="closeDemoModal"
+        class="fixed top-3 right-3 z-[1000000] bg-white w-9 h-9 rounded-full shadow-lg flex items-center justify-center text-lg hover:bg-gray-100 focus:outline-none"
+        aria-label="Close"
+      >✕</button>
+      <div class="rounded-3xl overflow-hidden relative dialog-body">
+        <div
+          class="calendly-inline-widget w-full h-full calendly_model"
+          data-url="https://calendly.com/gkeval-codezee/30min"
+          style="min-width: 0; height: 100%"
+        ></div>
+      </div>
+    </div>
+
+    <script src="addons.js"></script>
+  </body>
+</html>

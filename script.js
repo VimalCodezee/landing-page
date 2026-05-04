@@ -1,40 +1,21 @@
-/**
- * HRMS Landing Page — Interactive Features
- * Mobile menu, smooth scrolling, FAQ accordion, scroll animations, active nav
- */
-
 document.addEventListener("DOMContentLoaded", () => {
-  // ─── Live date & time (dashboard) ───
+  // ─── Live Date & Time ───
   const liveDateEl = document.getElementById("dashboard-live-date");
   const liveTimeEl = document.getElementById("dashboard-live-time");
-  const monthNames = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
 
   function updateLiveDateTime() {
     const now = new Date();
     if (liveDateEl) {
-      const d = now.getDate();
-      const m = monthNames[now.getMonth()];
-      const y = now.getFullYear();
-      liveDateEl.textContent = `${d} ${m} ${y}`;
+      liveDateEl.textContent = now.toLocaleDateString("en-IN", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      });
     }
     if (liveTimeEl) {
-      const h = String(now.getHours()).padStart(2, "0");
-      const min = String(now.getMinutes()).padStart(2, "0");
-      const s = String(now.getSeconds()).padStart(2, "0");
-      liveTimeEl.textContent = `${h}:${min}:${s}`;
+      liveTimeEl.textContent = now.toLocaleTimeString("en-IN", {
+        hour12: false,
+      });
     }
   }
   updateLiveDateTime();
@@ -44,251 +25,204 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("mobile-menu-btn");
   const menuOverlay = document.getElementById("mobile-menu-overlay");
   const menuClose = document.getElementById("mobile-menu-close");
-  const mobileLinks = document.querySelectorAll(".mobile-nav-link");
 
-  function openMenu() {
-    if (menuOverlay) {
-      menuOverlay.classList.add("open");
-      menuOverlay.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    }
-  }
+  const openMenu = () => {
+    if (!menuOverlay) return;
+    menuOverlay.classList.add("open");
+    menuOverlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  };
 
-  function closeMenu() {
-    if (menuOverlay) {
-      menuOverlay.classList.remove("open");
-      menuOverlay.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    }
-  }
+  const closeMenu = () => {
+    if (!menuOverlay) return;
+    menuOverlay.classList.remove("open");
+    menuOverlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  };
 
   menuBtn?.addEventListener("click", openMenu);
   menuClose?.addEventListener("click", closeMenu);
   menuOverlay?.addEventListener("click", (e) => {
     if (e.target === menuOverlay) closeMenu();
   });
-  mobileLinks.forEach((link) => link.addEventListener("click", closeMenu));
+  document
+    .querySelectorAll(".mobile-nav-link")
+    .forEach((l) => l.addEventListener("click", closeMenu));
 
-  // ─── Smooth Scrolling (header & footer nav, in-page anchors) ───
-  const headerOffsetPx = 80;
-  function scrollToSection(e) {
+  // ─── Smooth Scroll ───
+  const HEADER_OFFSET = 80;
+  document.addEventListener("click", (e) => {
     const a = e.target.closest('a[href^="#"]');
     if (!a) return;
-    const hash = a.getAttribute("href");
-    if (!hash || hash === "#") return;
-    const target = document.querySelector(hash);
+    const target = document.querySelector(a.getAttribute("href"));
     if (!target) return;
+
     e.preventDefault();
-    const top =
-      target.getBoundingClientRect().top + window.scrollY - headerOffsetPx;
-    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
-  }
-  document.addEventListener("click", scrollToSection);
+    window.scrollTo({
+      top: target.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET,
+      behavior: "smooth",
+    });
+  });
 
   // ─── FAQ Accordion ───
   document.querySelectorAll(".faq-toggle").forEach((btn) => {
     btn.addEventListener("click", () => {
       const item = btn.closest(".faq-item");
-      const wasActive = item.classList.contains("active");
+      const isActive = item.classList.contains("active");
 
-      // close all
       document
         .querySelectorAll(".faq-item.active")
         .forEach((i) => i.classList.remove("active"));
 
-      // toggle clicked
-      if (!wasActive) item.classList.add("active");
+      if (!isActive) item.classList.add("active");
     });
   });
 
-  // ─── Scroll Animations (IntersectionObserver) ───
-  const animElements = document.querySelectorAll(".animate-on-scroll");
+  // ─── Scroll Animations ───
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        obs.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.12 }
+  );
 
-  if (animElements.length) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target;
-          if (el.hasAttribute("data-scroll-visible")) {
-            observer.unobserve(el);
-            return;
-          }
-          el.setAttribute("data-scroll-visible", "true");
-          observer.unobserve(el);
-          el.classList.add("visible");
-        });
-      },
-      { threshold: 0.15 }
-    );
-    animElements.forEach((el) => observer.observe(el));
-  }
+  document
+    .querySelectorAll(".animate-on-scroll, .aos")
+    .forEach((el) => observer.observe(el));
 
-  // ─── FAQ Items Slide-in Animation ───
-  const faqItems = document.querySelectorAll(".faq-item");
-
-  if (faqItems.length) {
-    const faqObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const item = entry.target;
-          if (item.hasAttribute("data-faq-animated")) {
-            faqObserver.unobserve(item);
-            return;
-          }
-          item.setAttribute("data-faq-animated", "true");
-          faqObserver.unobserve(item);
-          item.classList.add("faq-visible");
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-    );
-    faqItems.forEach((item) => faqObserver.observe(item));
-  }
-
-  // ─── Active Nav Highlighting ───
+  // ─── Active Nav ───
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".nav-link");
 
   function highlightNav() {
     const scrollY = window.pageYOffset + 120;
 
-    sections.forEach((section) => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = section.getAttribute("id");
-
-      if (scrollY >= top && scrollY < top + height) {
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === `#${id}`) {
-            link.classList.add("active");
+    sections.forEach((sec) => {
+      if (
+        scrollY >= sec.offsetTop &&
+        scrollY < sec.offsetTop + sec.offsetHeight
+      ) {
+        navLinks.forEach((l) => {
+          l.classList.remove("active");
+          if (l.getAttribute("href") === `#${sec.id}`) {
+            l.classList.add("active");
           }
         });
       }
     });
   }
-
   window.addEventListener("scroll", highlightNav, { passive: true });
-  highlightNav(); // run once on load
+  highlightNav();
 
-  // ─── Load SVG Diagram (Responsive) ───
+  // ─── SVG Loader ───
   const svgContainer = document.querySelector(".svg-container");
 
   function loadDiagram() {
     if (!svgContainer) return;
 
-    // Check if mobile view (width < 1024px, matching lg breakpoint)
     const isMobile = window.innerWidth < 1024;
-    const svgPath = isMobile
+    const path = isMobile
       ? "assets/images/res-diagram.svg"
       : "assets/images/diagram.svg";
 
-    fetch(svgPath)
-      .then((response) => {
-        if (!response.ok) throw new Error("Failed to load SVG");
-        return response.text();
+    fetch(path)
+      .then((r) => {
+        if (!r.ok) throw new Error();
+        return r.text();
       })
-      .then((svgContent) => {
-        svgContainer.innerHTML = svgContent;
-      })
-      .catch((error) => {
-        console.error("Error loading SVG:", error);
-        // Fallback to desktop version if mobile version fails
-        if (isMobile) {
-          fetch("assets/images/diagram.svg")
-            .then((response) => {
-              if (!response.ok) throw new Error("Failed to load fallback SVG");
-              return response.text();
-            })
-            .then((svgContent) => {
-              svgContainer.innerHTML = svgContent;
-            })
-            .catch((fallbackError) => {
-              console.error("Error loading fallback SVG:", fallbackError);
-              svgContainer.innerHTML =
-                '<p style="color: #999; text-align: center; padding: 2rem;">Diagram unavailable</p>';
-            });
-        } else {
-          svgContainer.innerHTML =
-            '<p style="color: #999; text-align: center; padding: 2rem;">Diagram unavailable</p>';
-        }
+      .then((svg) => (svgContainer.innerHTML = svg))
+      .catch(() => {
+        svgContainer.innerHTML =
+          '<p style="text-align:center;padding:2rem;color:#999">Diagram unavailable</p>';
       });
   }
 
-  // Load diagram on page load
   if (svgContainer) {
     loadDiagram();
-
-    // Reload diagram on window resize (debounced)
-    let resizeTimeout;
+    let t;
     window.addEventListener("resize", () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        loadDiagram();
-      }, 250); // Debounce resize events
+      clearTimeout(t);
+      t = setTimeout(loadDiagram, 250);
     });
   }
 
-  // ─── Create Reflection Effect ───
-  const reflectionWrappers = document.querySelectorAll(".reflection-wrapper");
-  reflectionWrappers.forEach((wrapper) => {
-    const reflectionCard = wrapper.querySelector(".reflection-card");
-    const reflectionMirror = wrapper.querySelector(".reflection-mirror");
-    if (reflectionCard && reflectionMirror) {
-      // Clone the card content for true reflection
-      const clone = reflectionCard.cloneNode(true);
-      clone.classList.remove("hover:-translate-y-1", "group");
-      clone.style.transform = "scaleY(-1)";
-      clone.style.opacity = "0.25";
-      clone.style.pointerEvents = "none";
-      clone.style.filter = "blur(0.5px)";
-      clone.style.maskImage =
-        "linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%)";
-      clone.style.webkitMaskImage =
-        "linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%)";
-      reflectionMirror.appendChild(clone);
-    }
+  // ─── Reflection Effect ───
+  document.querySelectorAll(".reflection-wrapper").forEach((wrapper) => {
+    const card = wrapper.querySelector(".reflection-card");
+    const mirror = wrapper.querySelector(".reflection-mirror");
+    if (!card || !mirror) return;
+
+    const clone = card.cloneNode(true);
+    Object.assign(clone.style, {
+      transform: "scaleY(-1)",
+      opacity: "0.25",
+      pointerEvents: "none",
+      filter: "blur(0.5px)",
+    });
+
+    mirror.appendChild(clone);
   });
 
-  // ─── MUI TextField Floating Labels ───
-  const muiTextfields = document.querySelectorAll(".mui-textfield");
-
-  function updateLabelState(textfield) {
-    const input = textfield.querySelector(".mui-input");
+  // ─── MUI Floating Labels ───
+  document.querySelectorAll(".mui-textfield").forEach((tf) => {
+    const input = tf.querySelector(".mui-input");
     if (!input) return;
 
-    const hasValue = input.value && input.value.trim() !== "";
-    const isSelect = input.tagName === "SELECT";
-    const selectHasValue = isSelect && input.value !== "";
+    const update = () => {
+      const hasVal =
+        input.tagName === "SELECT"
+          ? input.value !== ""
+          : input.value.trim() !== "";
 
-    if (hasValue || selectHasValue) {
-      textfield.classList.add("has-value");
-    } else {
-      textfield.classList.remove("has-value");
-    }
+      tf.classList.toggle("has-value", hasVal);
+    };
+
+    update();
+    input.addEventListener("input", update);
+    input.addEventListener("change", update);
+    input.addEventListener("focus", () => tf.classList.add("focused"));
+    input.addEventListener("blur", () => {
+      tf.classList.remove("focused");
+      update();
+    });
+  });
+
+  // ─── Modal ───
+  const modal = document.getElementById("demoModal");
+  const closeBtn = document.getElementById("closeDemoModal");
+
+  function openModal() {
+    if (!modal) return;
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    document.body.style.overflow = "hidden";
   }
 
-  // Initialize all textfields on load
-  muiTextfields.forEach((textfield) => {
-    updateLabelState(textfield);
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    document.body.style.overflow = "";
+  }
 
-    const input = textfield.querySelector(".mui-input");
-    if (!input) return;
+  document.querySelectorAll(".free-demo-btn").forEach((btn) =>
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal();
+    })
+  );
 
-    // Handle input events
-    input.addEventListener("input", () => updateLabelState(textfield));
-    input.addEventListener("change", () => updateLabelState(textfield));
+  closeBtn?.addEventListener("click", closeModal);
 
-    // Handle focus/blur for visual feedback
-    input.addEventListener("focus", () => {
-      textfield.classList.add("focused");
-    });
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
 
-    input.addEventListener("blur", () => {
-      textfield.classList.remove("focused");
-      updateLabelState(textfield);
-    });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
   });
 });
