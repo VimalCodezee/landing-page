@@ -1,0 +1,52 @@
+{
+  "plan": {
+    "basePrice": 50,
+    "employees": 46
+  },
+  "addons": [
+    {
+      "id": "biometric",
+      "label": "Biometric integration",
+      "description": "Sync your attendance hardware directly with our cloud payroll.",
+      "rate": 1500,
+      "unit": "machine",
+      "qty": 2,
+      "selected": true,
+      "contact": false,
+      "showCheckbox": true
+    },
+    {
+      "id": "migration",
+      "label": "Data migration",
+      "description": "Expert help to move your legacy data safely and efficiently.",
+      "rate": 3000,
+      "unit": "month",
+      "qty": 1,
+      "selected": false,
+      "contact": true,
+      "showCheckbox": false
+    },
+    {
+      "id": "priority",
+      "label": "Priority support",
+      "description": "Skip the queue with a 2-hour response time guarantee.",
+      "rate": 1000,
+      "unit": "month",
+      "qty": 1,
+      "selected": false,
+      "contact": false,
+      "showCheckbox": true
+    },
+    {
+      "id": "reports",
+      "label": "Custom reports",
+      "description": "Bespoke analytics dashboards for your unique KPIs.",
+      "rate": 2000,
+      "unit": "report",
+      "qty": 1,
+      "selected": false,
+      "contact": false,
+      "showCheckbox": true
+    }
+  ]
+}

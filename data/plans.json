@@ -1,0 +1,46 @@
+[
+  {
+    "id": "starter",
+    "name": "Starter",
+    "tagline": "Ideal for small growing companies.",
+    "price": 49,
+    "type": "monthly",
+    "features": [
+      "Employee Management",
+      "Attendance Tracking",
+      "Basic Payroll Processing"
+    ],
+    "buttonText": "Start with Starter",
+    "popular": false
+  },
+  {
+    "id": "professional",
+    "name": "Professional",
+    "tagline": "Powering established organizations.",
+    "price": 69,
+    "type": "monthly",
+    "features": [
+      "Full Payroll Automation",
+      "PF / ESI / PT / TDS Compliance",
+      "Leave + Attendance Management",
+      "Advanced Analytical Reports"
+    ],
+    "buttonText": "Go Professional",
+    "popular": true
+  },
+  {
+    "id": "enterprise",
+    "name": "Enterprise",
+    "tagline": "Scalable solution for large scale ops.",
+    "price": "Custom",
+    "type": "custom",
+    "features": [
+      "Multi-location support",
+      "Custom salary structures",
+      "Full API / Integrations",
+      "Dedicated account support"
+    ],
+    "buttonText": "Contact Sales",
+    "popular": false
+  }
+]
