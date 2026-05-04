@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -195,7 +195,9 @@
         border-radius: 50%;
         background: #1e3a6e;
         border: 3px solid #fff;
-        box-shadow: 0 0 0 2px #1e3a6e, 0 2px 6px rgba(30, 58, 110, 0.35);
+        box-shadow:
+          0 0 0 2px #1e3a6e,
+          0 2px 6px rgba(30, 58, 110, 0.35);
         cursor: pointer;
         transition: transform 0.15s;
       }
@@ -232,11 +234,15 @@
       }
 
       .pro-shadow {
-        box-shadow: 0 0 0 2px #1e3a6e, 0 12px 40px rgba(30, 58, 110, 0.18);
+        box-shadow:
+          0 0 0 2px #1e3a6e,
+          0 12px 40px rgba(30, 58, 110, 0.18);
       }
 
       .addon-card {
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
         position: relative;
       }
 
@@ -253,7 +259,8 @@
         padding: 1px; /* border thickness */
         border-radius: 24px;
         background: linear-gradient(180deg, #243f89 0%, #141a2a 100%);
-        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
           linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
@@ -282,7 +289,8 @@
         border-radius: 24px;
         padding: 1px;
         background: linear-gradient(180deg, #243f89, #141a2a);
-        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
           linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
@@ -565,7 +573,6 @@
       <section
         id="pricing"
         class="transparent-pricing-section background-image-set"
-
       >
         <div
           class="max-w-[1240px] mt-[40px] md:mt-[40px] lg:mt-[76px] mx-auto text-center"
@@ -615,7 +622,6 @@
                 );
               "
             />
-
           </div>
         </div>
       </section>
@@ -735,7 +741,6 @@
             <p>Bespoke analytics dashboards for your unique KPIs.</p>
           </div>
         </div>
-
       </section>
 
       <!-- ─── CTA ─── -->
@@ -754,9 +759,7 @@
             </div>
 
             <div class="ecosystem-section-actions">
-              <a
-                href="#"
-                class="demo-btn !min-w-fit ecosystem-btn ecosystem-btn-primary"
+              <a class="demo-btn free-demo-btn !min-w-fit ecosystem-btn ecosystem-btn-primary"
                 >Free Demo</a
               >
 
@@ -878,10 +881,16 @@
       AOS.init({ once: true, offset: 60, duration: 600 });
     </script>
 
-
     <!-- Calendly Popup Modal -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <link
+      href="https://assets.calendly.com/assets/external/widget.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      type="text/javascript"
+      async
+    ></script>
     <div
       id="demoModal"
       class="fixed inset-0 bg-black/70 dialog-container h-full z-[999999] hidden items-center justify-center"
@@ -890,7 +899,9 @@
         id="closeDemoModal"
         class="fixed top-3 right-3 z-[1000000] bg-white w-9 h-9 rounded-full shadow-lg flex items-center justify-center text-lg hover:bg-gray-100 focus:outline-none"
         aria-label="Close"
-      >✕</button>
+      >
+        ✕
+      </button>
       <div class="rounded-3xl overflow-hidden relative dialog-body">
         <div
           class="calendly-inline-widget w-full h-full calendly_model"
