@@ -36,6 +36,7 @@
       rel="stylesheet"
     />
     <link rel="preload" href="css/main.css" as="style" />
+    <link rel="preload" href="css/tailwind.css" as="style" />
     <link
       rel="preload"
       href="assets/icons/apple-touch-icon-57x57.png"
@@ -86,6 +87,51 @@
     <link rel="preload" href="assets/icons/mstile-150x150.png" as="image" />
     <link rel="preload" href="assets/icons/mstile-310x150.png" as="image" />
     <link rel="preload" href="assets/icons/mstile-310x310.png" as="image" />
+    <link rel="preload" href="assets/images/img_logo.svg" as="image" />
+    <link rel="preload" href="assets/images/img_lightbg_1.png" as="image" />
+    <link rel="preload" href="assets/images/img_frame.svg" as="image" />
+    <link
+      rel="preload"
+      href="assets/images/img_structurefolderstrokerounded_1.svg"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="assets/images/img_wrench01strokerounded_1.svg"
+      as="image"
+    />
+    <link rel="preload" href="assets/images/img_briefcase_1_1.svg" as="image" />
+    <link rel="preload" href="assets/images/img_calendar_2.svg" as="image" />
+    <link rel="preload" href="assets/images/img_clock_1.svg" as="image" />
+    <link rel="preload" href="assets/images/img_1666_1.png" as="image" />
+    <link rel="preload" href="assets/images/img_pngegg_1.png" as="image" />
+    <link rel="preload" href="assets/images/nextprev.png" as="image" />
+    <link rel="preload" href="assets/images/img_analytics_1.svg" as="image" />
+    <link rel="preload" href="assets/images/img_arrow_up_right.svg" as="image" />
+    <link rel="preload" href="assets/images/img_chart_histogram.svg" as="image" />
+    <link rel="preload" href="assets/images/person1.png" as="image" />
+    <link rel="preload" href="assets/images/person2.png" as="image" />
+    <link rel="preload" href="assets/images/person3.png" as="image" />
+    <link rel="preload" href="assets/images/person4.png" as="image" />
+    <link rel="preload" href="assets/images/person5.png" as="image" />
+    <link rel="preload" href="assets/images/person6.png" as="image" />
+    <link rel="preload" href="assets/images/Vector.png" as="image" />
+    <link rel="preload" href="assets/images/v2.png" as="image" />
+    <link rel="preload" href="assets/images/v3.png" as="image" />
+    <link rel="preload" href="assets/images/v4.png" as="image" />
+    <link rel="preload" href="assets/images/payroll.svg" as="image" />
+    <link rel="preload" href="assets/images/payroll.png" as="image" />
+    <link rel="preload" href="assets/images/pending 1.svg" as="image" />
+    <link rel="preload" href="assets/images/current-icon.svg" as="image" />
+    <link rel="preload" href="assets/images/upcoming-icon.svg" as="image" />
+    <link rel="preload" href="assets/images/frame1.png" as="image" />
+    <link rel="preload" href="assets/images/image.png" as="image" />
+    <link rel="preload" href="assets/images/frame2.svg" as="image" />
+    <link rel="preload" href="assets/images/frame3.svg" as="image" />
+    <link rel="preload" href="assets/images/light-bg.svg" as="image" />
+    <link rel="preload" href="assets/images/hrms.png" as="image" />
+    <link rel="preload" href="assets/images/helper-right-img.png" as="image" />
+    <link rel="preload" href="assets/images/new_logo.svg" as="image" />
 
     <link
       rel="apple-touch-icon-precomposed"
@@ -2304,5 +2350,14 @@
 
     <!-- Your JS File -->
     <script src="script.js" defer></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("sw.js").catch(function (error) {
+            console.error("Service worker registration failed:", error);
+          });
+        });
+      }
+    </script>
   </body>
 </html>
