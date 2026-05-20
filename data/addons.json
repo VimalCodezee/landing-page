@@ -13,7 +13,8 @@
       "qty": 2,
       "selected": true,
       "contact": false,
-      "showCheckbox": true
+      "showCheckbox": true,
+      "isIncremental": true
     },
     {
       "id": "migration",
@@ -24,7 +25,8 @@
       "qty": 1,
       "selected": false,
       "contact": true,
-      "showCheckbox": false
+      "showCheckbox": false,
+      "isIncremental": false
     },
     {
       "id": "priority",
@@ -35,7 +37,8 @@
       "qty": 1,
       "selected": false,
       "contact": false,
-      "showCheckbox": true
+      "showCheckbox": true,
+      "isIncremental": false
     },
     {
       "id": "reports",
@@ -46,7 +49,8 @@
       "qty": 1,
       "selected": false,
       "contact": false,
-      "showCheckbox": true
+      "showCheckbox": true,
+      "isIncremental": true
     }
   ]
 }

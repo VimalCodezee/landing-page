@@ -2651,6 +2651,28 @@ button {
   font-size: small;
 }
 
+/* Show content until AOS initializes (prevents blank flash on refresh) */
+html:not(.aos-init) [data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Critical: hide demo modal before Tailwind runtime loads (prevents ✕ flash on refresh) */
+#demoModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+}
+
+#demoModal.modal-open {
+  display: flex;
+}
+
 .dialog-body {
   display: flex;
   flex-direction: column;

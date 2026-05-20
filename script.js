@@ -197,15 +197,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openModal() {
     if (!modal) return;
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
+    modal.classList.add("modal-open");
+    modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
   }
 
   function closeModal() {
     if (!modal) return;
-    modal.classList.add("hidden");
-    modal.classList.remove("flex");
+    modal.classList.remove("modal-open");
+    modal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
   }
 

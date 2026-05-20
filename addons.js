@@ -103,7 +103,7 @@
             ${
               item.contact
                 ? ""
-                : `<span class="text-xs text-gray-400 ml-1">/ ${item.unit}</span>`
+                : `<span class="text-xs text-gray-400 ml-1">${item.unit ? `/ ${item.unit}` : ""}</span>`
             }
           </div>
           ${
@@ -187,12 +187,12 @@
             item.label
           }</span>
           <div class="flex flex-col sm:flex-row items-center  ${
-            item.unit !== "month"
+            item.isIncremental
               ? "justify-between "
               : "justify-center lg:justify-end h-full"
           } gap-[4px] md:gap-[8px] pb-[5px]">
             ${
-              item.unit !== "month"
+              item.isIncremental
                 ? `<div class="flex items-center gap-1 bg-[#F2F3F4] border border-[#E6E6E6] rounded-[12px] p-[3px]">
               <button class="sum-qty-btn minus" data-id="${item.id}">−</button>
               <span class="px-[7px] sm:px-[14px] text-center text-[12px] sm:text-[16px] font-[600] text-[#000000]">${item.qty}</span>
@@ -204,7 +204,7 @@
               <span class="font-[600] sm:leading-[22px] leading-[18px] text-[#191C1E] sm:text-[18px] text-[14px]">${formatINR(
                 rowTotal
               )}</span>
-              <span class="sm:text-[12px] text-[10px] sm:leading-[16px] leading-[14px] font-[400] text-[#45464D]"> / month</span>
+              <span class="sm:text-[12px] text-[10px] sm:leading-[16px] leading-[14px] font-[400] text-[#45464D]"> / ${item.unit  ? item.unit : "one time"}</span>
             </div>
           </div>
         </div>
@@ -223,19 +223,17 @@
     const closeBtn = document.getElementById("closeDemoModal");
 
     function openModal() {
-      if (modal) {
-        modal.classList.remove("hidden");
-        modal.classList.add("flex");
-        document.body.style.overflow = "hidden";
-      }
+      if (!modal) return;
+      modal.classList.add("modal-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
     }
 
     function closeModal() {
-      if (modal) {
-        modal.classList.add("hidden");
-        modal.classList.remove("flex");
-        document.body.style.overflow = "";
-      }
+      if (!modal) return;
+      modal.classList.remove("modal-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
     }
 
     document.querySelectorAll(".free-demo-btn").forEach((btn) =>

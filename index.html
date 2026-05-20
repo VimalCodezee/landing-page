@@ -24,6 +24,7 @@
     />
 
     <link href="css/main.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -432,7 +433,6 @@
       <section
         id="home"
         class="relative w-full bg-[#f8fbfb] relative overflow-hidden"
-        data-aos="fade"
         style="
           background-image: url(&quot;assets/images/img_lightbg_1.png&quot;);
           background-size: cover;
@@ -2249,7 +2249,8 @@
     <!-- Calendly Popup Modal -->
     <div
       id="demoModal"
-      class="fixed inset-0 bg-black/70 dialog-container h-full z-[999999] hidden items-center justify-center"
+      class="dialog-container h-full"
+      aria-hidden="true"
     >
       <!-- Close button sits outside the dialog box so it never conflicts with Calendly's ribbon badge -->
       <button
@@ -2346,8 +2347,6 @@
       type="text/javascript"
       async
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
     <!-- Your JS File -->
     <script src="script.js" defer></script>
     <script>

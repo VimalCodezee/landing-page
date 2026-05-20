@@ -190,19 +190,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   const closeBtn = document.getElementById("closeDemoModal");
 
   function openModal() {
-    if (modal) {
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
-      document.body.style.overflow = "hidden";
-    }
+    if (!modal) return;
+    modal.classList.add("modal-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
   }
 
   function closeModal() {
-    if (modal) {
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-      document.body.style.overflow = "";
-    }
+    if (!modal) return;
+    modal.classList.remove("modal-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
   }
 
   document.querySelectorAll(".free-demo-btn").forEach((btn) =>
