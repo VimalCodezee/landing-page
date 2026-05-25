@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
 
@@ -38,7 +38,6 @@
 
     <style>
       .legal-body {
-        font-family: "Inter", system-ui, -apple-system, sans-serif;
         color: #333;
         background: #ffffff;
       }
@@ -84,6 +83,46 @@
 
       .legal-preamble p + p {
         margin-top: 12px;
+      }
+
+      .legal-preamble strong {
+        color: #111827;
+        font-weight: 600;
+      }
+
+      .legal-breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13.5px;
+        color: #6b7280;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+      }
+
+      .legal-breadcrumb a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: #243f89;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .legal-breadcrumb a:hover {
+        color: #141a2a;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .legal-breadcrumb .sep {
+        color: #d1d5db;
+      }
+
+      .legal-breadcrumb .current {
+        color: #111827;
+        font-weight: 500;
       }
 
       .legal-section {
@@ -328,30 +367,50 @@
 
     <main>
       <div class="legal-wrap">
+        <nav class="legal-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Home
+          </a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span class="current">Terms of Service</span>
+        </nav>
+
         <h1 class="legal-title">Terms of Service</h1>
         <p class="legal-updated">Last updated on: 25 May 2026</p>
 
         <div class="legal-preamble">
           <p>
-            These Terms of Service ("Terms") govern your use of our services
-            and form a legally binding agreement between you and Codezee
-            Solutions Pvt. Ltd. ("Codezee").
+            These Terms of Service ("Terms") govern your use of our services and
+            form a legally binding agreement between you and
+            <strong>Codezee Solutions Pvt. Ltd.</strong>
           </p>
           <p>
             By accessing our website, using our services, registering an
             account, executing a Subscription Order Form ("SOF"), or any
             document that references these Terms — including any free trial or
-            free account — you acknowledge and agree to be bound by these
-            Terms, all applicable policies, and any additional terms referenced
-            herein.
+            free account — you acknowledge and agree to be bound by these Terms,
+            all applicable policies, and any additional terms referenced herein.
           </p>
           <p>
             If you are entering into this Agreement on behalf of a company or
             other legal entity, you represent that you have the authority to
             bind that entity. In that case, "you", "your", or "Subscriber"
             refers to such entity and its affiliates. If you do not have such
-            authority, or you do not agree with these Terms, you must not
-            accept this Agreement or use the Services.
+            authority, or you do not agree with these Terms, you must not accept
+            this Agreement or use the Services.
           </p>
         </div>
 
@@ -360,8 +419,8 @@
           <p>
             <strong>1.1</strong> "Account-Related Information" means data
             collected for account management, billing, authentication, and
-            customer support, including the Subscriber's name, contact
-            details, payment details, and communication records with Codezee.
+            customer support, including the Subscriber's name, contact details,
+            payment details, and communication records with Codezee.
           </p>
           <p>
             <strong>1.2</strong> "Agreement" means these Terms of Service
@@ -372,8 +431,8 @@
           <p>
             <strong>1.3</strong> "Authorized User" means an individual user
             authorized by the Subscriber to access and use the Codezee Platform,
-            including the Subscriber's HR administrators, payroll managers,
-            line managers, employees, contractors, and consultants.
+            including the Subscriber's HR administrators, payroll managers, line
+            managers, employees, contractors, and consultants.
           </p>
           <p>
             <strong>1.4</strong> "Codezee Platform" or "Services" means
@@ -384,35 +443,35 @@
             documentation.
           </p>
           <p>
-            <strong>1.5</strong> "Subscriber Data" means all data,
-            information, documents, or other materials that the Subscriber or
-            its Authorized Users input, submit, upload, or process using the
-            Codezee Platform — including employee records, payroll inputs,
-            attendance logs, leave applications, and uploaded documents. The
-            Subscriber retains all ownership rights to Subscriber Data.
+            <strong>1.5</strong> "Subscriber Data" means all data, information,
+            documents, or other materials that the Subscriber or its Authorized
+            Users input, submit, upload, or process using the Codezee Platform —
+            including employee records, payroll inputs, attendance logs, leave
+            applications, and uploaded documents. The Subscriber retains all
+            ownership rights to Subscriber Data.
           </p>
           <p>
-            <strong>1.6</strong> "Subscription Term" means the period for
-            which the Subscriber has agreed to subscribe to the Services as
-            specified in the relevant SOF.
+            <strong>1.6</strong> "Subscription Term" means the period for which
+            the Subscriber has agreed to subscribe to the Services as specified
+            in the relevant SOF.
           </p>
           <p>
-            <strong>1.7</strong> "Confidential Information" means all
-            non-public information disclosed by one party to the other, whether
-            orally, in writing, or electronically, including the terms of this
-            Agreement, pricing, business strategies, technical know-how,
-            employee data, and credentials related to the Services.
+            <strong>1.7</strong> "Confidential Information" means all non-public
+            information disclosed by one party to the other, whether orally, in
+            writing, or electronically, including the terms of this Agreement,
+            pricing, business strategies, technical know-how, employee data, and
+            credentials related to the Services.
           </p>
         </section>
 
         <section class="legal-section">
           <h2>2. Account Usage &amp; User Responsibilities</h2>
           <p>
-            <strong>2.1 Access to Services.</strong> Subject to the
-            Subscriber's compliance with this Agreement, Codezee grants the
-            Subscriber a revocable, non-exclusive, non-transferable right to
-            access and use the Services solely for its internal business
-            purposes during the Subscription Term.
+            <strong>2.1 Access to Services.</strong> Subject to the Subscriber's
+            compliance with this Agreement, Codezee grants the Subscriber a
+            revocable, non-exclusive, non-transferable right to access and use
+            the Services solely for its internal business purposes during the
+            Subscription Term.
           </p>
           <p>
             <strong>2.2 Subscriber Responsibilities.</strong> The Subscriber
@@ -429,8 +488,8 @@
             </li>
             <li>
               maintain the confidentiality of login credentials, enable
-              multi-factor authentication (MFA), and configure role-based
-              access for sensitive HR and payroll modules;
+              multi-factor authentication (MFA), and configure role-based access
+              for sensitive HR and payroll modules;
             </li>
             <li>
               promptly disable accounts for employees who leave the
@@ -474,9 +533,9 @@
               is unlawful, defamatory, obscene, or otherwise objectionable;
             </li>
             <li>
-              interfere with the security, infrastructure, or performance of
-              the Services, including unauthorized data scraping, load testing,
-              or tracking mechanisms;
+              interfere with the security, infrastructure, or performance of the
+              Services, including unauthorized data scraping, load testing, or
+              tracking mechanisms;
             </li>
             <li>
               remove or alter any proprietary notices contained in the Codezee
@@ -507,26 +566,25 @@
         <section class="legal-section">
           <h2>4. Free Trial</h2>
           <p>
-            Codezee may offer a free trial period for evaluation purposes.
-            Trial accounts may be subject to feature restrictions, employee
-            headcount limits, or limits on the number of payroll runs that can
-            be processed. Trial accounts are provided on an "as-is" basis
-            without service-level commitments and may be modified or
-            discontinued at any time at Codezee's sole discretion. If the
-            Subscriber does not convert to a paid subscription by the end of
-            the trial, the workspace will be downgraded and Subscriber Data
-            will be retained as set out in the Privacy Policy before being
-            deleted.
+            Codezee may offer a free trial period for evaluation purposes. Trial
+            accounts may be subject to feature restrictions, employee headcount
+            limits, or limits on the number of payroll runs that can be
+            processed. Trial accounts are provided on an "as-is" basis without
+            service-level commitments and may be modified or discontinued at any
+            time at Codezee's sole discretion. If the Subscriber does not
+            convert to a paid subscription by the end of the trial, the
+            workspace will be downgraded and Subscriber Data will be retained as
+            set out in the Privacy Policy before being deleted.
           </p>
         </section>
 
         <section class="legal-section">
           <h2>5. Subscriber Data &amp; Employee Records</h2>
           <p>
-            The Subscriber retains all right, title, and interest in
-            Subscriber Data, including all employee personal data, payroll
-            inputs, and uploaded documents. The Subscriber is the data
-            controller and Codezee acts as the data processor.
+            The Subscriber retains all right, title, and interest in Subscriber
+            Data, including all employee personal data, payroll inputs, and
+            uploaded documents. The Subscriber is the data controller and
+            Codezee acts as the data processor.
           </p>
           <p>
             The Subscriber grants Codezee a limited license to host, store,
@@ -553,10 +611,10 @@
             Subscriber Data on the Subscriber's behalf, the
             <a href="privacy-policy.html">Privacy Policy</a> and the Data
             Processing Addendum (DPA) are incorporated by reference into this
-            Agreement. Codezee maintains administrative, technical, and
-            physical safeguards aligned with SOC 2 and ISO/IEC 27001
-            principles, including encryption in transit and at rest, role-based
-            access control, audit logging, and incident response procedures.
+            Agreement. Codezee maintains administrative, technical, and physical
+            safeguards aligned with SOC 2 and ISO/IEC 27001 principles,
+            including encryption in transit and at rest, role-based access
+            control, audit logging, and incident response procedures.
           </p>
         </section>
 
@@ -582,9 +640,9 @@
             Certain functionalities on the Codezee Platform may involve
             integrations with third-party tools such as identity providers
             (Google, Microsoft Entra, Okta), accounting tools (Tally, Zoho
-            Books, QuickBooks), communication platforms (Slack, Microsoft
-            Teams, WhatsApp Business), biometric attendance devices, payout
-            gateways, job boards, and background verification vendors.
+            Books, QuickBooks), communication platforms (Slack, Microsoft Teams,
+            WhatsApp Business), biometric attendance devices, payout gateways,
+            job boards, and background verification vendors.
           </p>
           <p>
             The integration of any third-party service is at the Subscriber's
@@ -619,8 +677,8 @@
         <section class="legal-section">
           <h2>10. Intellectual Property</h2>
           <p>
-            Codezee owns all rights, title, and interest in the Codezee
-            Platform and its intellectual property rights, including updates,
+            Codezee owns all rights, title, and interest in the Codezee Platform
+            and its intellectual property rights, including updates,
             modifications, and derivative works. This Agreement does not grant
             the Subscriber any rights in Codezee's intellectual property other
             than the limited license expressly set out in these Terms.
@@ -646,10 +704,10 @@
             2023 (DPDP Act), and the EU GDPR / UK GDPR where applicable.
           </p>
           <p>
-            Codezee provides templates and statutory report generators to
-            assist the Subscriber. These tools do not constitute legal, tax,
-            or accounting advice, and the Subscriber remains solely
-            responsible for the correctness of all statutory filings.
+            Codezee provides templates and statutory report generators to assist
+            the Subscriber. These tools do not constitute legal, tax, or
+            accounting advice, and the Subscriber remains solely responsible for
+            the correctness of all statutory filings.
           </p>
         </section>
 
@@ -666,22 +724,22 @@
             terminate this Agreement by giving 30 days' written notice if the
             other party materially breaches the Agreement and fails to cure the
             breach within the notice period. Codezee may suspend or terminate
-            the Services immediately for non-payment, security risks, or use
-            in violation of law.
+            the Services immediately for non-payment, security risks, or use in
+            violation of law.
           </p>
           <p>
             <strong>12.3 Retrieval of Subscriber Data.</strong> Upon
             termination, Codezee will provide the Subscriber access to the
-            Codezee Platform for up to 30 days, at no additional cost, solely
-            to retrieve Subscriber Data. After this period, unless legally
-            required to retain it, Codezee may delete Subscriber Data from
-            active systems within 60 days and from backups within 180 days.
+            Codezee Platform for up to 30 days, at no additional cost, solely to
+            retrieve Subscriber Data. After this period, unless legally required
+            to retain it, Codezee may delete Subscriber Data from active systems
+            within 60 days and from backups within 180 days.
           </p>
           <p>
-            <strong>12.4 Survival.</strong> Sections that by their nature
-            should survive termination — including those relating to
-            Subscriber Data, intellectual property, confidentiality, indemnity,
-            limitation of liability, and governing law — will survive.
+            <strong>12.4 Survival.</strong> Sections that by their nature should
+            survive termination — including those relating to Subscriber Data,
+            intellectual property, confidentiality, indemnity, limitation of
+            liability, and governing law — will survive.
           </p>
         </section>
 
@@ -694,8 +752,8 @@
             goodwill, data, or business opportunities, arising out of or in
             connection with this Agreement, regardless of the form of action.
             Either party's total aggregate liability shall not exceed the total
-            fees paid by the Subscriber to Codezee during the twelve (12)
-            months immediately preceding the event giving rise to the claim.
+            fees paid by the Subscriber to Codezee during the twelve (12) months
+            immediately preceding the event giving rise to the claim.
           </p>
         </section>
 
@@ -703,12 +761,12 @@
           <h2>14. Warranty Disclaimer</h2>
           <p>
             Except as expressly provided in this Agreement, and to the maximum
-            extent permitted by applicable law, Codezee provides the Services
-            on an "as-is" and "as-available" basis, without warranties of any
-            kind, including warranties of merchantability, fitness for a
-            particular purpose, and non-infringement. Codezee does not warrant
-            that the Services will be uninterrupted or error-free, or that all
-            defects will be corrected.
+            extent permitted by applicable law, Codezee provides the Services on
+            an "as-is" and "as-available" basis, without warranties of any kind,
+            including warranties of merchantability, fitness for a particular
+            purpose, and non-infringement. Codezee does not warrant that the
+            Services will be uninterrupted or error-free, or that all defects
+            will be corrected.
           </p>
         </section>
 
@@ -722,13 +780,12 @@
             agreed in a settlement approved by Codezee.
           </p>
           <p>
-            <strong>15.2 By Subscriber.</strong> The Subscriber shall defend
-            and indemnify Codezee against any third-party claim arising out of
-            (a) Subscriber Data, including any allegation that it infringes or
+            <strong>15.2 By Subscriber.</strong> The Subscriber shall defend and
+            indemnify Codezee against any third-party claim arising out of (a)
+            Subscriber Data, including any allegation that it infringes or
             misappropriates third-party rights; (b) the Subscriber's breach of
-            Section 2.3 (Usage Restrictions); or (c) the Subscriber's
-            statutory obligations to its employees, candidates, or
-            contractors.
+            Section 2.3 (Usage Restrictions); or (c) the Subscriber's statutory
+            obligations to its employees, candidates, or contractors.
           </p>
         </section>
 
@@ -771,8 +828,8 @@
             governmental actions, or pandemics.
           </p>
           <p>
-            <strong>17.5 Notices.</strong> Legal notices to Codezee must be
-            sent to
+            <strong>17.5 Notices.</strong> Legal notices to Codezee must be sent
+            to
             <a href="mailto:sales@codezeesolutions.com"
               >sales@codezeesolutions.com</a
             >. Notices to the Subscriber will be sent to the email address
@@ -780,8 +837,8 @@
           </p>
           <p>
             <strong>17.6 Severability.</strong> If any provision of this
-            Agreement is held to be unenforceable, the remaining provisions
-            will remain in full force.
+            Agreement is held to be unenforceable, the remaining provisions will
+            remain in full force.
           </p>
           <p>
             <strong>17.7 Independent Contractors.</strong> The parties are
@@ -792,9 +849,7 @@
 
         <section class="legal-section">
           <h2>18. Contact Us</h2>
-          <p>
-            Questions about these Terms? Please reach out to us:
-          </p>
+          <p>Questions about these Terms? Please reach out to us:</p>
           <ul>
             <li>
               Email:
@@ -805,10 +860,6 @@
             <li>
               Phone:
               <a href="tel:+919825051196">+91 98250 51196</a>
-            </li>
-            <li>
-              Registered office: Codezee Solutions Pvt. Ltd., Ahmedabad,
-              Gujarat, India.
             </li>
           </ul>
         </section>

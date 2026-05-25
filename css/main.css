@@ -2,7 +2,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css");
 * {
   box-sizing: border-box;
-  font-family: Zalando Sans;
+  font-family: Zalando Sans !important;
 }
 
 /* ─── Smooth scrolling + thin scrollbar (theme colors) ─── */

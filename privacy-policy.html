@@ -14,10 +14,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
+    href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet"
+  />
     <link
       rel="apple-touch-icon-precomposed"
       sizes="152x152"
@@ -82,6 +81,46 @@
 
       .legal-preamble p + p {
         margin-top: 12px;
+      }
+
+      .legal-preamble strong {
+        color: #111827;
+        font-weight: 600;
+      }
+
+      .legal-breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13.5px;
+        color: #6b7280;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+      }
+
+      .legal-breadcrumb a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: #243f89;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .legal-breadcrumb a:hover {
+        color: #141a2a;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .legal-breadcrumb .sep {
+        color: #d1d5db;
+      }
+
+      .legal-breadcrumb .current {
+        color: #111827;
+        font-weight: 500;
       }
 
       .legal-section {
@@ -326,17 +365,38 @@
 
     <main>
       <div class="legal-wrap">
+        <nav class="legal-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Home
+          </a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span class="current">Privacy Policy</span>
+        </nav>
+
         <h1 class="legal-title">Privacy Policy</h1>
         <p class="legal-updated">Last updated on: 25 May 2026</p>
 
         <div class="legal-preamble">
           <p>
-            This Privacy Policy explains how Codezee Solutions Pvt. Ltd.
-            ("Codezee", "we", "us", "our") collects, uses, stores, and protects
-            personal data when you use Codezee HRMS — our cloud-based human
-            resources, payroll, and workforce management platform — through
-            our website, web and mobile applications, and APIs (the
-            "Services").
+            This Privacy Policy explains how
+            <strong>Codezee Solutions Pvt. Ltd.</strong> collects, uses,
+            stores, and protects personal data when you use
+            Codezee HRMS — our cloud-based human resources, payroll, and
+            workforce management platform — through our website, web and
+            mobile applications, and APIs (the "Services").
           </p>
           <p>
             It applies to two audiences: <strong>Subscribers</strong> —
@@ -842,10 +902,7 @@
               Phone:
               <a href="tel:+919825051196">+91 98250 51196</a>
             </li>
-            <li>
-              Registered office: Codezee Solutions Pvt. Ltd., Ahmedabad,
-              Gujarat, India.
-            </li>
+           
           </ul>
           <p>
             Our team aims to acknowledge privacy requests within 5 business
